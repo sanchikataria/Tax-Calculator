@@ -17,6 +17,7 @@ h1 {
 
 form {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: left;
     margin-top: 10%;
@@ -24,28 +25,56 @@ form {
     margin-bottom: 10%;
 }
 label {
-    display: block;
-    margin-bottom: -3px;
+    font-size: 14px;
+    margin-bottom: -5px;
 }
-input[type="number"] {
-    width: 75%;
-    padding: 8px;
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
     border: 1px solid #ccc;
     margin: 3%;
     align-items: center;
+    
 }
 .error-icon {
+    position: absolute;
     display: none;
-    position: relative;
-    top: 5px;
-    margin-left: 5px;
-    cursor: help;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    text-align: center;
+    line-height: 20px; 
+    background-color: #ffffff;
+    color: red; 
+    cursor: pointer;
+    margin-left: -5px;
+    border-color: #ccc;
+    border: 1px solid;
+    margin-top: 18px;
+    
 }
 
 .error-icon::after {
-    content: '!';
-    color: red;
+    content: attr(data-tooltip); 
+    position: absolute;
+    display: none; 
+    background-color: #514c4c;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 3px;
     font-size: 14px;
+    white-space: nowrap;
+margin-top: 18px;
+    z-index: 1;
+    margin-left: -5px;
+    top: calc(100% + 5px); 
+    left: 50%; 
+    transform: translateX(-50%) ; 
+}
+.error-icon:hover::after {
+    display: block; 
+   
 }
 .tooltip-icon {
     position: relative;
@@ -72,6 +101,7 @@ input[type="number"] {
     border-radius: 3px;
     font-size: 14px;
     white-space: nowrap;
+
     z-index: 1;
     
     top: calc(100% + 5px); 

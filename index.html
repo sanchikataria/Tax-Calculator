@@ -11,30 +11,42 @@
     <div class="container">
        
         <form onsubmit="event.preventDefault(); calculateIncome()">
+            <div class="input-wrapper">
             <label for="gross-income">Enter gross annual income :</label>
             <span class="tooltip-icon" data-tooltip="Gross annual income is your total annual income before any deductions">?</span>
-               
-            <input type="number" id="gross-income" placeholder="Enter gross income amount" required>
-            <span class="error-icon" id="gross-income-error"></span>
+            <input type="text" id="gross-income" placeholder="Enter gross income amount" required>
+            <span class="error-icon" id="gross-income-error" data-tooltip="please enter numbers only">!</span>
+            </div>
+            
             <br>
-            <label for="extra-income">Enter extra income:</label>
-            <span class="tooltip-icon" data-tooltip="Enter any additional income from other sources that might add to the annual income">?</span>
-               
-            <input type="number" id="extra-income" placeholder="Enter extra income from other sources" required>
-            <br>
+
+            <div class="input-wrapper">
+                <label for="extra-income">Enter extra income:</label>
+                <span class="tooltip-icon" data-tooltip="Enter any additional income from other sources that might add to the annual income">?</span>
+                <input type="text" id="extra-income" placeholder="Enter extra income from other sources" required>
+                <span class="error-icon" id="extra-income-error" data-tooltip="please enter numbers only">!</span>
+    
+            </div>
+        
+        <br>
+           <div class="input-wrapper">
             <label for="age-group">Select your age group:</label>
             <span class="tooltip-icon" data-tooltip="Select your age group for applicable tax percentage">?</span>
-               
             <select id="age-group" required>
                 <option value="<40">Under 40</option>
                 <option value=">=40 & <60">40 to 60</option>
                 <option value=">=60">Over 60</option>
             </select>
+
+           </div>
+            
             <br>
+            <div class="input-wrapper">
             <label for="deductions">Total applicable deductions :</label>
             <span class="tooltip-icon" data-tooltip="Enter total applicable deductions in your income">?</span>
-               
-            <input type="number" id="deductions" placeholder="Add total applicable deductions" required>
+            <input type="text" id="deductions" placeholder="Add total applicable deductions" required>
+            <span class="error-icon" id="deductions-error" data-tooltip="please enter numbers only">!</span>
+            </div>
             <br>
             <button type="submit">Submit</button>
         </form>
