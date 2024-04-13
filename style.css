@@ -47,6 +47,40 @@ input[type="number"] {
     color: red;
     font-size: 14px;
 }
+.tooltip-icon {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    text-align: center;
+    line-height: 20px; 
+    background-color: #ffffff;
+    color: #3130309d; 
+    cursor: pointer;
+    margin-left: 5px;
+    border-color: #ccc;
+    border: 1px solid;
+}
+.tooltip-icon::after {
+    content: attr(data-tooltip); 
+    position: absolute;
+    display: none; 
+    background-color: #4d4c51;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1;
+    
+    top: calc(100% + 5px); 
+    left: 50%; 
+    transform: translateX(-50%) ; 
+}
+.tooltip-icon:hover::after {
+    display: block; 
+}
 
 
 select {

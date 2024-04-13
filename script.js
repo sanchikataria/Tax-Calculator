@@ -18,7 +18,7 @@ if (ageGroup === '<40') {
 }
     
 
-    // Display overall income in popup
+    // to Display overall income in popup
     const popup = document.getElementById('popup');
     const overallIncomeElement = document.getElementById('overall-income');
     overallIncomeElement.textContent = `₹${overallIncome.toFixed(2)}`;
