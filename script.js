@@ -4,24 +4,24 @@ function calculateIncome() {
     const ageGroup = document.getElementById('age-group').value;
     const deductions = parseFloat(document.getElementById('deductions').value);
 
-    // Calculate overall income after tax deductions
+    //income after adding extras and removing deductions
     let overallIncome = grossIncome + extraIncome - deductions;
-
-    // Apply tax based on age group
-    if (ageGroup === '<40') {
-        // No tax for age under 40
-    } else if (ageGroup === '>=40 & <60') {
-        // Apply tax rate for age between 40 and 60
-        overallIncome *= 0.7; // 30% tax (70% after tax)
-    } else if (ageGroup === '>=60') {
-        // Apply tax rate for age over 60
-        overallIncome *= 0.9; // 10% tax (90% after tax)
-    }
+if(overallIncome>800000){
+// Apply tax based on age group
+if (ageGroup === '<40') {
+    overallIncome *= 0.7; // 30% tax (70% after tax)
+} else if (ageGroup === '>=40 & <60') {
+    overallIncome *= 0.6; // 40% tax (60% after tax)
+} else if (ageGroup === '>=60') {
+    overallIncome *= 0.9; // 10% tax (90% after tax)
+}
+}
+    
 
     // Display overall income in popup
     const popup = document.getElementById('popup');
     const overallIncomeElement = document.getElementById('overall-income');
-    overallIncomeElement.textContent = `₹${overallIncome.toFixed(2)} `;
+    overallIncomeElement.textContent = `₹${overallIncome.toFixed(2)}`;
     popup.style.display = 'flex';
 }
 
@@ -29,7 +29,6 @@ function closePopup() {
     const popup = document.getElementById('popup');
     popup.style.display = 'none';
     
-    // Reset form fields
     resetForm();
 }
 
