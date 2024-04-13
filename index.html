@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gross Annual Income</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gross Annual Income</h1>
+    <div class="container">
+       
+        <form onsubmit="event.preventDefault(); calculateIncome()">
+            <label for="gross-income">Enter gross annual income (in Lakhs):</label>
+            <input type="number" id="gross-income" placeholder="Enter gross income amount" required>
+            <span class="error-icon" id="gross-income-error"></span>
+            <br>
+            <label for="extra-income">Enter extra income:</label>
+            <input type="number" id="extra-income" placeholder="Enter extra income from other sources" required>
+            <br>
+            <label for="age-group">Select your age group:</label>
+            <select id="age-group">
+                <option value="<40">Under 40</option>
+                <option value=">=40 & <60">40 to 60</option>
+                <option value=">=60">Over 60</option>
+            </select>
+            <br>
+            <label for="deductions">Total applicable deductions :</label>
+            <input type="number" id="deductions" placeholder="Add total applicable deductions" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Your Overall Income will be</h2>
+            <p id="overall-income"></p>
+            <h8>after Tax Deductions</h8>
+            <br>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
